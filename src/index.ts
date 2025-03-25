@@ -1,10 +1,7 @@
 import { registerPlugin } from '@capacitor/core';
+import type { ScreenshotDetectorPlugin } from './definitions';
 
-import type { ScreenshotDetectorPluginPlugin } from './definitions';
-
-const ScreenshotDetectorPlugin = registerPlugin<ScreenshotDetectorPluginPlugin>('ScreenshotDetectorPlugin', {
-  web: () => import('./web').then((m) => new m.ScreenshotDetectorPluginWeb()),
-});
+const ScreenshotDetector = registerPlugin<ScreenshotDetectorPlugin>('ScreenshotDetector');
 
 export * from './definitions';
-export { ScreenshotDetectorPlugin };
+export { ScreenshotDetector };
